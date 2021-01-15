@@ -5,6 +5,28 @@ import { css } from '@emotion/core'
 const styles = css`
  .header {
    font-weight: bold;
+   text-align: center;
+   color: #676767;
+ }
+
+ tr:nth-child(even) {
+   background: rgba(221, 218, 206, 0.3);
+ }
+
+ tr:nth-child(odd) {
+   background: #FFFFFF;
+ }
+
+ tr:first-of-type {
+   background: rgb(221, 218, 206);
+ }
+
+ tr:hover {
+   background: rgb(221, 218, 206);
+ }
+
+ td {
+   padding: 0 4px 0 4px;
  }
 `
 
@@ -12,7 +34,7 @@ const makeDataTestId = (transactionId, fieldName) => `transaction-${transactionI
 
 export function TxTable ({ data }) {
   return (
-    <table css={styles}>
+    <table css={styles} border="0" cellspacing="0" cellpadding="0">
       <tbody>
         <tr className='header'>
           <td >ID</td>
