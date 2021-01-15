@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  mongodb:
+    image: mongo:4.4.3
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: divvy
+      MONGO_INITDB_ROOT_PASSWORD: divvypay
+      MONGO_INITDB_DATABASE: admin
+      DATABASE_USERNAME: divvy
+      DATABASE_PASSWORD: divvypay
+      MONGO_INITDB_DATABASE: graphql
+      MONGO_PORT: 27017
+    ports:
+      - 27017:27017
+    volumes:
+      - mongo_data:/data/db
+      - ./docker/:/docker-entrypoint-initdb.d
+
+volumes:
+  mongo_data:
