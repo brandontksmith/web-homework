@@ -1,40 +1,12 @@
 import React from 'react'
 import { arrayOf, string, bool, number, shape } from 'prop-types'
-import { css } from '@emotion/core'
-
-const styles = css`
- .header {
-   font-weight: bold;
-   text-align: center;
-   color: #676767;
- }
-
- tr:nth-child(even) {
-   background: rgba(221, 218, 206, 0.3);
- }
-
- tr:nth-child(odd) {
-   background: #FFFFFF;
- }
-
- tr:first-of-type {
-   background: rgb(221, 218, 206);
- }
-
- tr:hover {
-   background: rgb(221, 218, 206);
- }
-
- td {
-   padding: 0 4px 0 4px;
- }
-`
+import { styles } from '../../styles/table'
 
 const makeDataTestId = (transactionId, fieldName) => `transaction-${transactionId}-${fieldName}`
 
 export function TxTable ({ data }) {
   return (
-    <table css={styles} border="0" cellspacing="0" cellpadding="0">
+    <table border='0' cellPadding='0' cellSpacing='0' css={styles}>
       <tbody>
         <tr className='header'>
           <td >ID</td>
@@ -48,14 +20,15 @@ export function TxTable ({ data }) {
         {
           data.map(tx => {
             const { id, user_id: userId, description, merchant_id: merchantId, debit, credit, amount } = tx
+
             return (
               <tr data-testid={`transaction-${id}`} key={`transaction-${id}`}>
                 <td data-testid={makeDataTestId(id, 'id')}>{id}</td>
                 <td data-testid={makeDataTestId(id, 'userId')}>{userId}</td>
                 <td data-testid={makeDataTestId(id, 'description')}>{description}</td>
                 <td data-testid={makeDataTestId(id, 'merchant')}>{merchantId}</td>
-                <td data-testid={makeDataTestId(id, 'debit')}>{debit}</td>
-                <td data-testid={makeDataTestId(id, 'credit')}>{credit}</td>
+                <td data-testid={makeDataTestId(id, 'debit')}>{ debit ? 'Y' : 'N' }</td>
+                <td data-testid={makeDataTestId(id, 'credit')}>{ credit ? 'Y' : 'N' }</td>
                 <td data-testid={makeDataTestId(id, 'amount')}>{amount}</td>
               </tr>
             )

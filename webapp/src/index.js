@@ -11,7 +11,7 @@ const wrapperStyle = css`
 
 ReactDOM.render(
   (
-    <div data-app-init='' css={ wrapperStyle }>
+    <div css={wrapperStyle} data-app-init=''>
       <ApolloProvider client={client}>
         <AppRouter />
       </ApolloProvider>

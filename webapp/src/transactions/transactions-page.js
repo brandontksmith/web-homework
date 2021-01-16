@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/client'
-import GetUsers from '../gql/users.gql'
-import { UsersTable } from '../components/users/UsersTable'
+import GetTransactions from '../gql/transactions.gql'
+import { TxTable } from '../components/transactions/TxTable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ErrorFragment } from '../components/ErrorFragment'
 import { Loader } from '../components/Loader'
 
-export function Users () {
-  const { loading, error, data = {} } = useQuery(GetUsers)
+export function Transactions () {
+  const { loading, error, data = {} } = useQuery(GetTransactions)
 
   if (loading) {
     return <Loader />
@@ -19,7 +19,7 @@ export function Users () {
 
   return (
     <Fragment>
-      <UsersTable data={data.users} />
+      <TxTable data={data.transactions} />
     </Fragment>
   )
 }
