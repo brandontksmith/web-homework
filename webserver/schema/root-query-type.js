@@ -20,7 +20,8 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLString }
       },
       resolve (parentValue, args) {
-        return Transactions.findOne(args.id)
+        console.log(args)
+        return Transactions.findOne(args)
       }
     },
     transactions: {

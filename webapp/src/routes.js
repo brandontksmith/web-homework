@@ -3,24 +3,39 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { css } from '@emotion/core'
 import { Home } from './home'
 import { Users } from './users'
-import { Transactions } from './transactions'
+import { Transactions, EditTransaction } from './transactions'
 
 import { Nav } from './components/nav'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-library.add(faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle)
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle, faTimesCircle, faCheckCircle, faTimes, faEdit, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle, faTimes, faCheckCircle, faTimesCircle, faEdit, faChevronLeft)
 
 function AppRouter () {
   return (
     <Router>
       <Nav />
+      <ToastContainer
+        autoClose={5000}
+        closeOnClick
+        draggable
+        hideProgressBar={false}
+        newestOnTop={false}
+        pauseOnFocusLoss
+        pauseOnHover
+        position='top-right'
+        rtl={false}
+      />
       <div css={layoutStyle}>
         <div className='main-content' css={contentStyle}>
           <Route component={Home} exact path='/' />
           <Route component={Users} exact path='/users' />
           <Route component={Transactions} exact path='/transactions' />
+          <Route component={EditTransaction} path='/transactions/:id' />
         </div>
       </div>
     </Router>

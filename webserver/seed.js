@@ -40,12 +40,12 @@ const seed = async () => {
         credit: isCredit,
         debit: !isCredit,
         description: faker.finance.transactionDescription(),
-        merchant_id: null
+        merchant_id: faker.random.uuid()
       })
-
-      console.log(await transaction.save())
     }
   }
+
+  mongoose.connection.close()
 }
 
 seed();

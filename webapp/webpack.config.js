@@ -45,10 +45,17 @@ const graphQlConfig = {
   loader: 'graphql-tag/loader'
 }
 
+const cssConfig = {
+  test: /\.css$/i,
+  use: ['style-loader', 'css-loader'],
+  include: NODE_MODULES_DIR_REGEX
+}
+
 const rules = [
   babelConfig,
   eslintConfig,
   imageUrlConfig,
+  cssConfig,
   {
     test: /\.mjs$/,
     include: NODE_MODULES_DIR_REGEX,

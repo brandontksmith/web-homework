@@ -26,5 +26,17 @@ export const styles = css`
 
  td {
    padding: 4px;
+
+   &.credit, &.debit {
+     text-align: center;
+   }
+
+   &.actions {
+     min-width: 75px;
+
+     & > button {
+       margin: 0 2px 0 2px;
+     }
+   }
  }
 `

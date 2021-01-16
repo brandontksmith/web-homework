@@ -1,7 +1,7 @@
 import React from 'react'
 import { VictoryPie } from 'victory'
 import { useQuery } from '@apollo/client'
-import GetTransactions from '../gql/transactions.gql'
+import { GetTransactions } from '../gql/transactions.gql'
 import { ErrorFragment } from '../components/ErrorFragment'
 import { Loader } from '../components/Loader'
 import { css } from '@emotion/core'
