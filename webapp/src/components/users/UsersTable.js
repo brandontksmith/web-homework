@@ -29,7 +29,6 @@ export function UsersTable ({ data }) {
         }
       </tbody>
     </table>
-
   )
 }
 

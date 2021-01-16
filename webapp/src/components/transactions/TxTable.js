@@ -36,7 +36,6 @@ export function TxTable ({ data }) {
         }
       </tbody>
     </table>
-
   )
 }
 

@@ -8,9 +8,9 @@ import { Transactions } from './transactions'
 import { Nav } from './components/nav'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faUsers, faCircleNotch, faMoneyCheck } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-library.add(faHome, faUsers, faCircleNotch, faMoneyCheck)
+library.add(faHome, faUsers, faCircleNotch, faMoneyCheck, faPlusCircle)
 
 function AppRouter () {
   return (
@@ -31,7 +31,6 @@ export default AppRouter
 
 const layoutStyle = css`
   display: flex;
-  grid-row-gap: 24px;
   flex-direction: row;
   margin-left: 235px;
   min-height: 100%;
@@ -39,8 +38,6 @@ const layoutStyle = css`
 
 const contentStyle = css`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex: 1;
   flex-direction: column;
   padding: 10px 10px 10px 0;

@@ -2,7 +2,6 @@ import React, { Fragment } from 'react'
 import { useQuery } from '@apollo/client'
 import GetUsers from '../gql/users.gql'
 import { UsersTable } from '../components/users/UsersTable'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ErrorFragment } from '../components/ErrorFragment'
 import { Loader } from '../components/Loader'
 
